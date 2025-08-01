@@ -5,6 +5,7 @@ function App() {
   const [input, setInput] = useState(""); // new state for user input
   const socketRef = useRef(null);
   const tabId = useRef(Math.random().toString(36).slice(2, 8)); 
+  
 useEffect(() => {
   socketRef.current = new WebSocket("ws://localhost:3001");
 
