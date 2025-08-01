@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
+import "./App.css"; // Ensure you have this CSS file for styling
 
 function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState(""); // new state for user input
   const socketRef = useRef(null);
   const tabId = useRef(Math.random().toString(36).slice(2, 8)); 
-  
+
 useEffect(() => {
   socketRef.current = new WebSocket("ws://localhost:3001");
 
@@ -62,12 +63,12 @@ useEffect(() => {
       <p>Tab ID: <strong>{tabId.current}</strong></p>
 
       <input
+      className="input"
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Type your message here"
-        style={{ width: "300px", marginRight: "8px" }}
       />
       <button onClick={sendMessage}>Send Message</button>
 
