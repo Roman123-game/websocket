@@ -8,7 +8,7 @@ function App() {
   const tabId = useRef(Math.random().toString(36).slice(2, 8)); 
 
 useEffect(() => {
-  socketRef.current = new WebSocket("ws://localhost:3001");
+  socketRef.current = new WebSocket("https://websocket-nc60.onrender.com");
 
   socketRef.current.onopen = () => {
     console.log("WebSocket opened");
