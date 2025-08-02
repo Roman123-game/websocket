@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+     "netl": "netlify build && netlify deploy --prod --dir=dist --message=\"vs code\" && netlify open && netlify open:site",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
